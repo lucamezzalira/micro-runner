@@ -15,7 +15,6 @@ const resultTable = new Table({
     colWidths:[5, 30, 15, 15]
 });
 
-
 const files_list = async (url) => {
     let files;
 
@@ -59,7 +58,6 @@ const generateOutput = (metrics) => {
     tmp_arr[winner].average = colors.green(tmp_arr[winner].average);
 
    tmp_arr.forEach((value) => resultTable.push(Object.values(value)))
-    
 }
 
 const verify_iterations = iterations => {
@@ -70,7 +68,6 @@ const verify_iterations = iterations => {
         return MAX_ITERATIONS;
     
     return iterations;
-
 }
 
 const init = async () => {
@@ -102,8 +99,6 @@ const spinner = ora({
 init();
 
 //TODO: check JS files are passed and skip others
-//TODO: add maximum files to be analized
-//TODO: export results to IMG
 //TODO: refactor index.js extracting output code
 //TODO: add --verbose mode with details of every run
 //TODO: web server for testing in different devices
