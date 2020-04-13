@@ -1,19 +1,14 @@
-const Table = require('cli-table3');
 const ora = require('ora');
 const minimist = require('minimist');
 const fork = require('child_process').fork;
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
-const colors = require('colors');
 const readdir = util.promisify(fs.readdir);
+const output = require('./utils/cli_output');
 
-const BENCHMARK_ITERATION = 10;
+const DEFAULT_ITERATIONS = 10;
 const MAX_ITERATIONS = 100;
-const resultTable = new Table({
-    head: ["ID", "Test", "Time", "Iterations"],
-    colWidths:[5, 30, 15, 15]
-});
 
 const files_list = async (url) => {
     let files;
@@ -27,42 +22,9 @@ const files_list = async (url) => {
     return files.map(file => path.resolve(url) + "/" + file);
 }
 
-const generateOutput = (metrics) => {
-    let total_tests_time, average;
-    let winner, tmp_average;
-    let tmp_arr = [];
-    for(let i = 0; i < metrics.length; i++){
-        average = 0;
-        total_tests_time = 0;
-        for(let k = 0; k < metrics[i].data.length; k++){
-            total_tests_time += metrics[i].data[k].time;
-        }
-        average = total_tests_time/metrics[i].data.length;
-        
-        if(!tmp_average) tmp_average = average;
-        if(average < tmp_average){
-            tmp_average = average;
-            winner = i;
-        } 
-
-        tmp_arr.push({
-            id:metrics[i].id,
-            benchmark: metrics[i].benchmark,
-            average: `${average.toFixed(3)} ms`,
-            iterations: metrics[i].iterations
-        })  
-    }
-
-    tmp_arr[winner].id = colors.green(tmp_arr[winner].id);
-    tmp_arr[winner].benchmark = colors.green(tmp_arr[winner].benchmark);
-    tmp_arr[winner].average = colors.green(tmp_arr[winner].average);
-
-   tmp_arr.forEach((value) => resultTable.push(Object.values(value)))
-}
-
 const verify_iterations = iterations => {
     if(!iterations)
-        return BENCHMARK_ITERATION;
+        return DEFAULT_ITERATIONS;
     
     if(iterations > MAX_ITERATIONS)
         return MAX_ITERATIONS;
@@ -84,10 +46,10 @@ const init = async () => {
     const child = fork('./tests_runner.js', [JSON.stringify({tests: tests, iterations: iterations})])
     child.on("exit", function(){
         spinner.succeed("benchmarks ready")
-        console.log(resultTable.toString());
+        output.render();
     });
     child.on("message", (data) => {
-        generateOutput(data);
+        output.analyze(data);
     })
 }
 
@@ -99,6 +61,7 @@ const spinner = ora({
 init();
 
 //TODO: check JS files are passed and skip others
-//TODO: refactor index.js extracting output code
+//TODO: refactor on index.js -> extracting args logic
+//TODO: review APIs for creating tests and publish to micro-runner
 //TODO: add --verbose mode with details of every run
 //TODO: web server for testing in different devices
