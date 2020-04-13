@@ -1,12 +1,18 @@
 # Micro-Runner
 ### a CLI playground for benchmarking your JavaScript code 
 
-![Micro-Runner terminal example](./micro-runner.png "Micro-Runner terminal example")
+![Micro-Runner terminal example](https://github.com/lucamezzalira/micro-runner/raw/master/micro-runner.png "Micro-Runner terminal example")
 
 The main aim behind Micro-Runner is making microbenchmarking accessible and fun.    
 Often, web, mobile or desktop applications are suffering of poor performances and developers are struggling to analyze their applications performance and improve them.
 Micro-Runner aims to run some code in isolation like you would do in a  playground, directly from your CLI, providing an immediate feedback when you want to compare the most performant implementation across multiple of them.
 
+## Installation
+```
+npm install -g micro-runner
+```
+
+In this way, Micro-Runner is always available inside your terminal!
 
 ## Basic usage
 ```
