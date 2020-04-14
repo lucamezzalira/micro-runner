@@ -1,6 +1,7 @@
 const ora = require('ora');
 const fork = require('child_process').fork;
 const path = require('path');
+const colors = require('colors');
 const fs = require('fs');
 const util = require('util');
 const readdir = util.promisify(fs.readdir);
@@ -13,7 +14,9 @@ const files_list = async (url) => {
     try{
         files  = await readdir(path.resolve(url))
     } catch(err){
-        throw "the directory doesn't exist, check the path again";
+        spinner.stop();
+        console.error(colors.red("the directory doesn't exist, check the path again"));
+        process.exit();
     }
     
     files = files.filter(file => {
@@ -31,7 +34,14 @@ const init = async () => {
     if(args.folder){
         tests = await files_list(args.folder);
     } else {
-        tests = [path.resolve(args.file)]
+        if(fs.existsSync(args.file)){
+            tests = [path.resolve(args.file)]
+        }else{
+            spinner.stop();
+            console.error(colors.red("the file doesn't exist, check the path again"));
+            process.exit();
+        }
+
     } 
 
     const child = fork('./tests_runner.js', [JSON.stringify({tests: tests, iterations: iterations})])
@@ -50,6 +60,12 @@ const init = async () => {
     })
 }
 
+process.on("uncaughtException", (err) => {
+    console.error(colors.red("Something went wrong! Please try again :("));
+    spinner.stop();
+    process.exit();
+});
+
 const spinner = ora({
     text: "running benchmarks",
     color: "yellow"
@@ -62,4 +78,3 @@ init();
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
 //TODO: add --help
-//TODO: fix error when file is missing or there is an error in the application
