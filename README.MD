@@ -64,9 +64,9 @@ micro-runner -v
 TBD
 
 ### Roadmap
-[] better erros management
-[] create JavaScript library for gathering and reporting metrics to Micro-Runner
-[] add _interactive help_ in the CLI
+[] better erros management    
+[] create JavaScript library for gathering and reporting metrics to Micro-Runner   
+[] add _interactive help_ in the CLI     
 
 ### Future Ideas
 - gathering micro-benchmarks from other sources
