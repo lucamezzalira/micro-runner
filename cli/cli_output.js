@@ -32,9 +32,11 @@ const analyze = (metrics) => {
         })  
     }
 
-    tmp_arr[winner].id = colors.green(tmp_arr[winner].id);
-    tmp_arr[winner].benchmark = colors.green(tmp_arr[winner].benchmark);
-    tmp_arr[winner].average = colors.green(tmp_arr[winner].average);
+    if(winner){
+        tmp_arr[winner].id = colors.green(tmp_arr[winner].id);
+        tmp_arr[winner].benchmark = colors.green(tmp_arr[winner].benchmark);
+        tmp_arr[winner].average = colors.green(tmp_arr[winner].average);
+    }
 
     tmp_arr.forEach((value) => resultTable.push(Object.values(value)))
 }
