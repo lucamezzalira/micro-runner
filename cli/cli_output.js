@@ -1,15 +1,19 @@
 const colors = require('colors');
 const Table = require('cli-table3');
+const json2xls = require('json2xls');
+const fs = require('fs');
 
 const resultTable = new Table({
     head: ["ID", "Test", "Time", "Iterations"],
     colWidths:[8, 30, 15, 12]
 });
 
+const tmp_arr = [];
+
 const analyze = (metrics, verbose) => {
     let total_tests_time, average;
     let winner, tmp_average, metrics_length;
-    let tmp_arr = [];
+
     for(let i = 0; i < metrics.length; i++){
         average = 0;
         total_tests_time = 0;
@@ -26,7 +30,7 @@ const analyze = (metrics, verbose) => {
         } 
 
         tmp_arr.push({
-            id:metrics[i].id,
+            id:metrics[i].id.toString(),
             benchmark: metrics[i].benchmark,
             time: `${average.toFixed(3)} ms`,
             iterations: metrics[i].iterations
@@ -57,7 +61,13 @@ const render = () => {
     console.log(resultTable.toString());
 }
 
+const createXLS = (dir) => {
+    const xls = json2xls(tmp_arr);
+    fs.writeFileSync(dir + `/micro-runner_${Date.now()}.xlsx`, xls, 'binary');
+}
+
 module.exports = {
     analyze: analyze,
-    render: render
+    render: render,
+    createXLS: createXLS
 }

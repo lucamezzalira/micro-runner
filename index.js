@@ -38,6 +38,8 @@ const init = async () => {
     child.on("exit", function(){
         spinner.succeed("benchmarks ready")
         output.render();
+        if(args.XLSoutput)
+            output.createXLS(path.resolve(args.XLSoutput));
     });
     child.on("message", (data) => {
         output.analyze(data, args.verbose);
@@ -56,6 +58,7 @@ const spinner = ora({
 init();
 
 //TODO: export to xls
+
 //TODO: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
 //TODO: web server for testing in different devices

@@ -31,6 +31,7 @@
   "dependencies": {
     "cli-table3": "^0.6.0",
     "colors": "^1.4.0",
+    "json2xls": "^0.1.2",
     "minimist": "^1.2.5",
     "ora": "^4.0.3",
     "performance-now": "^2.1.0"
