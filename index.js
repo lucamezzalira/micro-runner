@@ -57,12 +57,9 @@ const spinner = ora({
 
 init();
 
-//TODO: export to xls
-
-//TODO: move files list logic into args.js
+//TODO: REFACTOR: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
-//TODO: highlight in green is needed only in comparison
 //TODO: add --help
 //TODO: fix error when file is missing or there is an error in the application

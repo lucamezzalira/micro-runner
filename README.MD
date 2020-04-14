@@ -21,8 +21,7 @@ micro-runner ./mybenchmark.js
 
 Micro-Runner runs your test retrieving the benchmark of specific parts of your code displaying them in a table.    
 The best Micro-Runner usage is for comparing similar alghortims with different implementations.   
-Micro-Runner is a playground for learning how fast some code may run in isolation.   
-It can be used for running benchmarks on different machine not only locally (_UNDER DEVELOPMENT_).   
+Micro-Runner is a playground for learning how fast some code may run in isolation.     
 
 ## CLI arguments
 
@@ -35,7 +34,7 @@ When you need to specify multiple file please use the folder argument as specifi
 ```
 micro-runner -i 10 ./mybenchmark.js
 ```
--i corresponds to the number of iterations you wanna run per benchmark, it has to be an integer and can be a **number from 1 to 500**. When the parameter provided is larger than 500, the iterations per benchmark will be 100.   
+**-i** corresponds to the number of iterations you wanna run per benchmark, it has to be an integer and can be a **number from 1 to 100**. When the parameter provided is larger than 100, the iterations per benchmark will be 100.   
 When this parameter is not specified the **default value is 10**.
 
 _If you have many tests and you set 500 iterations per benchmark be aware it could take a while._
@@ -43,11 +42,34 @@ _If you have many tests and you set 500 iterations per benchmark be aware it cou
 ```
 micro-runner -f ./benchmarks
 ```
--f is used for specifying a folder with JavaScript files. Every single JavaScript file in that folder will run sequentially one after the other.
+**-f** is used for specifying a folder with JavaScript files. Every single JavaScript file in that folder will run sequentially one after the other.
+
+```
+micro-runner --verbose ./benchmarks
+```
+**-verbose** command shows every iteration time for each benchmark
+
+```
+micro-runner -x ./results ./benchmarks
+```
+**-x** command followed by a directory exports the Micro-Runner results to an Excel file
+
+```
+micro-runner -v
+```
+**-v** command shows the Micro-Runner version installed
 
 ## Benchmark anatomy
 
 TBD
+
+### Roadmap
+[] better erros management
+[] create JavaScript library for gathering and reporting metrics to Micro-Runner
+[] add _interactive help_ in the CLI
+
+### Future Ideas
+- gathering micro-benchmarks from other sources
 
 ### Contacts
 For any additional info or ideas feel free to [reach me out](mailto:mezzalab@gmail.com)
