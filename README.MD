@@ -45,12 +45,12 @@ micro-runner -f ./benchmarks
 **-f** is used for specifying a folder with JavaScript files. Every single JavaScript file in that folder will run sequentially one after the other.
 
 ```
-micro-runner --verbose ./benchmarks
+micro-runner --verbose ./benchmark.js
 ```
 **-verbose** command shows every iteration time for each benchmark
 
 ```
-micro-runner -x ./results ./benchmarks
+micro-runner -x ./results ./benchmark.js
 ```
 **-x** command followed by a directory exports the Micro-Runner results to an Excel file
 
