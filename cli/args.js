@@ -26,5 +26,6 @@ const verify_iterations = iterations => {
 module.exports = {
     iterations: verify_iterations(params.i),
     folder: params.f,
-    file: params._[0]
+    file: params._[0],
+    verbose: params.verbose
 }

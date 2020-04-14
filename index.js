@@ -25,7 +25,6 @@ const files_list = async (url) => {
 }
 
 const init = async () => {
-    
     let iterations = args.iterations;
     let tests;
 
@@ -41,7 +40,7 @@ const init = async () => {
         output.render();
     });
     child.on("message", (data) => {
-        output.analyze(data);
+        output.analyze(data, args.verbose);
     })
     child.on("error", (err) => {
         spinner.stop();
@@ -56,11 +55,11 @@ const spinner = ora({
 
 init();
 
-//TODO: highlight in green is needed only in comparison
+//TODO: export to xls
 //TODO: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
-//TODO: add --verbose mode with details of every run
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
+//TODO: highlight in green is needed only in comparison
 //TODO: add --help
 //TODO: fix error when file is missing or there is an error in the application
