@@ -38,7 +38,7 @@ const init = async () => {
             tests = [path.resolve(args.file)]
         }else{
             spinner.stop();
-            console.error(colors.red("the file doesn't exist, check the path again"));
+            console.error(colors.red("the file doesn't exist, check the path and try again"));
             process.exit();
         }
 
