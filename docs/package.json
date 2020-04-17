@@ -39,17 +39,6 @@
     "copy-deps": "cpx \"packages/landing/*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\" -C",
     "install-deps": "cd \"dist/functions\" && yarn"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,md,css}": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
-    ]
-  },
   "dependencies": {
     "polished": "^3.4.4"
   }
