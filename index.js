@@ -75,7 +75,6 @@ init();
 
 //TODO: having multiple benchmark in the same file
 //TODO: process.exit after N seconds
-//TODO: BUG: the winner is not highligting the first element in the table
 //TODO: REFACTOR: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
 //TODO: web server for testing in different devices
