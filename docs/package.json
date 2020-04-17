@@ -30,27 +30,14 @@
     "clean": "lerna clean --yes && rimraf node_modules",
     "start": "lerna run --parallel dev",
     "preweb": "cpx \"packages/common/src/assets/image/**/*.*\" \"packages/landing/static\" -C",
-    "next-dev": "yarn workspace next-landing run dev",
-    "next-build": "rimraf dist && yarn workspace next-landing run build",
-    "next-start": "yarn workspace next-landing run start",
-    "next-export": "yarn workspace next-landing run export",
     "gatsby-dev": "yarn workspace gatsby-landing run dev",
     "gatsby-build": "yarn workspace gatsby-landing run build",
     "gatsby-serve": "yarn workspace gatsby-landing run serve",
     "prebuild-public": "rimraf \"dist/functions/**\" && rimraf \"dist/public\"",
-    "prefirebase-serve": "yarn run build-public && yarn run build-funcs && yarn workspace next-landing run build && yarn run copy-deps && yarn run install-deps",
-    "firebase-serve": "cross-env NODE_ENV=production firebase serve",
-    "prefirebase-deploy": "yarn run build-public && yarn run build-funcs && yarn workspace next-landing run build && yarn run copy-deps",
-    "firebase-deploy": "cross-env NODE_ENV=production firebase deploy",
     "build-public": "cpx \"packages/common/src/assets/**/*.*\" \"dist/public/static\" -C && cpx \"public/**/*.*\" \"dist/public\" -C && cpx \"packages/landing/public/**/*.*\" \"dist/public\" -C",
     "build-funcs": "babel \"packages/functions\" --out-dir \"dist/functions\"",
     "copy-deps": "cpx \"packages/landing/*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\" -C",
-    "install-deps": "cd \"dist/functions\" && yarn",
-    "pregatsby-firebase-serve": "rimraf dist && yarn run gatsby-build && cpx \"packages/landing-gatsby/public/**/*.*\" \"dist/public\" -C",
-    "gatsby-firebase-serve": "cross-env NODE_ENV=production firebase serve",
-    "pregatsby-firebase-deploy": "rimraf dist && yarn run gatsby-build && cpx \"packages/landing-gatsby/public/**/*.*\" \"dist/public\" -C",
-    "gatsby-firebase-deploy": "firebase deploy",
-    "netlify-deploy": "yarn workspace next-landing run netlify-build"
+    "install-deps": "cd \"dist/functions\" && yarn"
   },
   "husky": {
     "hooks": {

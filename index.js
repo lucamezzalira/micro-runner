@@ -80,3 +80,4 @@ init();
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
 //TODO: add --help
+//TODO: structure monorepo with node_modules shared (yarn for docs "preinstall": "yarn install --modules-folder ../node_modules")
