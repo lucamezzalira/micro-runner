@@ -73,11 +73,10 @@ const spinner = ora({
 
 init();
 
-//TODO: having multiple benchmark in the same file
+//TODO: having multiple benchmark in the same file ?
 //TODO: process.exit after N seconds
 //TODO: REFACTOR: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
 //TODO: add --help
-//TODO: structure monorepo with node_modules shared (yarn for docs "preinstall": "yarn install --modules-folder ../node_modules")
