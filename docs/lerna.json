@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "packages/common",
+    "packages/landing",
+    "packages/landing-gatsby",
+    "packages/reusecore"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

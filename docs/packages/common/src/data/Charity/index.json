@@ -1,0 +1,457 @@
+{
+  "menuItems": [
+    {
+      "label": "Feature",
+      "path": "#feature",
+      "offset": "81"
+    },
+    {
+      "label": "Our Branch",
+      "path": "#branch",
+      "offset": "100"
+    },
+    {
+      "label": "How We Works",
+      "path": "#work",
+      "offset": "81"
+    },
+    {
+      "label": "Our Milestone",
+      "path": "#milestone",
+      "offset": "81"
+    },
+    {
+      "label": "Donate Us",
+      "path": "#donate",
+      "offset": "81"
+    },
+    {
+      "label": "Fundraisers",
+      "path": "#fundraisers",
+      "offset": "81"
+    },
+    {
+      "label": "Our Blog",
+      "path": "#blog",
+      "offset": "81"
+    }
+  ],
+  "bannerSlides": [
+    {
+      "id": 1,
+      "thumb_url": "../../assets/image/charity/banner/slide1.png"
+    },
+    {
+      "id": 2,
+      "thumb_url": "../../assets/image/charity/banner/slide2.png"
+    },
+    {
+      "id": 3,
+      "thumb_url": "../../assets/image/charity/banner/slide3.png"
+    },
+    {
+      "id": 4,
+      "thumb_url": "../../assets/image/charity/banner/slide4.jpg"
+    }
+  ],
+  "featureData": {
+    "title": "They Care, Do You?",
+    "slogan": "Here is how you can get involved and make a change.",
+    "features": [
+      {
+        "id": 1,
+        "icon": "../../assets/image/charity/feature/1.svg",
+        "title": "Sponsor A Water",
+        "description": "If you want to change the world, one wish at a time, help kids"
+      },
+      {
+        "id": 2,
+        "icon": "../../assets/image/charity/feature/2.svg",
+        "title": "Pledge For A Cause",
+        "description": "If you want to change the world, one wish at a time."
+      },
+      {
+        "id": 3,
+        "icon": "../../assets/image/charity/feature/3.svg",
+        "title": "Buy a Coffee",
+        "description": "If you want to change the world, one wish at a time."
+      },
+      {
+        "id": 4,
+        "icon": "../../assets/image/charity/feature/4.svg",
+        "title": "Volunteer With Us",
+        "description": "If you want to change the world, one wish at a time, help kids"
+      },
+      {
+        "id": 5,
+        "icon": "../../assets/image/charity/feature/5.svg",
+        "title": "Partner With Us",
+        "description": "If you want to change the world, one wish at."
+      },
+      {
+        "id": 6,
+        "icon": "../../assets/image/charity/feature/6.svg",
+        "title": "Help us for Educational ",
+        "description": "If you want to change the world, one wish at a time."
+      }
+    ]
+  },
+  "branchData": [
+    {
+      "id": 1,
+      "menuItem": "Afganistan",
+      "image": "../../assets/image/charity/branch/image1.png",
+      "slogan": "WITH YOUR LOVE",
+      "title": "We’ve funded <strong>12,925</strong> water projects for <strong>5.2 million</strong> people around the world.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "linkUrl": "#1",
+      "linkText": "SEE MORE OF OUR IMPACT"
+    },
+    {
+      "id": 2,
+      "menuItem": "ukraine",
+      "image": "../../assets/image/charity/branch/image2.png",
+      "slogan": "WITH YOUR CARE",
+      "title": "We’ve funded <strong>19,571</strong> water projects for <strong>6.7 million</strong> people around the world.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "linkUrl": "#1",
+      "linkText": "SEE MORE OF OUR IMPACT"
+    },
+    {
+      "id": 3,
+      "menuItem": "Africa",
+      "image": "../../assets/image/charity/branch/image.png",
+      "slogan": "WITH YOUR HELP",
+      "title": "We’ve funded <strong>29,725</strong> water projects for <strong>8.4 million</strong> people around the world.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "linkUrl": "#1",
+      "linkText": "SEE MORE OF OUR IMPACT"
+    },
+    {
+      "id": 4,
+      "menuItem": "India",
+      "image": "../../assets/image/charity/branch/image3.png",
+      "slogan": "WITH YOUR LOVE",
+      "title": "We’ve funded <strong>10,792</strong> water projects for <strong>4.9 million</strong> people around the world.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "linkUrl": "#1",
+      "linkText": "SEE MORE OF OUR IMPACT"
+    },
+    {
+      "id": 5,
+      "menuItem": "South Sudan",
+      "image": "../../assets/image/charity/branch/image4.png",
+      "slogan": "WITH YOUR CARE",
+      "title": "We’ve funded <strong>10,071</strong> water projects for <strong>3.7 million</strong> people around the world.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "linkUrl": "#1",
+      "linkText": "SEE MORE OF OUR IMPACT"
+    },
+    {
+      "id": 6,
+      "menuItem": "Bhutan",
+      "image": "../../assets/image/charity/branch/image5.png",
+      "slogan": "WITH YOUR HELP",
+      "title": "We’ve funded <strong>19,792</strong> water projects for <strong>7.9 million</strong> people around the world.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "linkUrl": "#1",
+      "linkText": "SEE MORE OF OUR IMPACT"
+    }
+  ],
+  "workData": {
+    "title": "How We Works",
+    "slogan": "Water is a non-profit organization bringing clean and safe drinking water to people in developing countries",
+    "features": [
+      {
+        "id": 1,
+        "icon": "../../assets/image/charity/map-pin.svg",
+        "title": "We prove every project",
+        "description": "We track every dollar you raise, and show the projects you helped fund with photos."
+      },
+      {
+        "id": 2,
+        "icon": "../../assets/image/charity/search-icon.svg",
+        "title": "We’re an open book",
+        "description": "We’ve consistently received the highest grades available for accountability."
+      },
+      {
+        "id": 3,
+        "icon": "../../assets/image/charity/icon-100p.svg",
+        "title": "100% goes to the field",
+        "description": "Private donors cover our operating costs so 100% of your money can fund water projects."
+      }
+    ]
+  },
+  "milestoneData": {
+    "title": "OUR FIRST MILESTONE",
+    "amount": "$4M",
+    "text": "RAISED TO DATE",
+    "counterItems": [
+      {
+        "id": 1,
+        "amount": "154",
+        "title": "Successful Project"
+      },
+      {
+        "id": 2,
+        "amount": "1534",
+        "title": "People Impacted"
+      },
+      {
+        "id": 3,
+        "amount": "71",
+        "title": "Supported Country"
+      },
+      {
+        "id": 4,
+        "amount": "15k",
+        "title": "Money Donated"
+      }
+    ]
+  },
+  "humanityData": {
+    "image": "../../assets/image/charity/humanity-glob.png",
+    "slogan": "ONLINE SOCIAL FUNDRAISING",
+    "title": "We need your help to promotr humanity",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+    "lists": [
+      {
+        "id": 1,
+        "text": "Let them drink pure"
+      },
+      {
+        "id": 2,
+        "text": "Ensure them medicare"
+      },
+      {
+        "id": 3,
+        "text": "create opportunity of education"
+      }
+    ]
+  },
+  "promotionData": {
+    "slogan": "GET YOUR COMMUNITY ON BOARD",
+    "title": "We are creating a world with basic safety for all.",
+    "text1": "We exist to permanently end violent conict and exploitation facing our world's most isolated and unprotected communities.",
+    "text2": "We partner with local visionaries in volatile conict zones to build community-run initiatives and drive global policy change to end violent conict, save lives, and give communities the safety they deserve.",
+    "lists": [
+      {
+        "id": 1,
+        "text": "Let them drink pure"
+      },
+      {
+        "id": 2,
+        "text": "Ensure them medicare"
+      },
+      {
+        "id": 3,
+        "text": "create opportunity of education"
+      }
+    ],
+    "image": "../../assets/image/charity/promotion.svg"
+  },
+  "paymentPolicy": [
+    {
+      "id": 1,
+      "title": "One Time",
+      "value": "oneTime",
+      "text": "One Time donation given"
+    },
+    {
+      "id": 2,
+      "title": "Ongoing",
+      "value": "ongoing",
+      "text": "Everymonth donation given"
+    }
+  ],
+  "currencyOptions": [
+    {
+      "id": 1,
+      "value": "usd",
+      "title": "$ USD"
+    },
+    {
+      "id": 2,
+      "value": "gbp",
+      "title": "£ GBP"
+    },
+    {
+      "id": 3,
+      "value": "cny",
+      "title": "¥ CNY"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Uganda Embraces South Sudanese Refugees, For Now",
+      "excerpt": "72 million children around the world are not enrolled in school. Concern Worldwide focuses on providing basic education to those…",
+      "thumbUrl": "../../assets/image/charity/blog/thumb-1.png",
+      "btnText": "Learn More ",
+      "btnUrl": "#1"
+    },
+    {
+      "id": 2,
+      "title": "BRITs Week 2019 together with O2 is here",
+      "excerpt": "72 million children around the world are not enrolled in school. Concern Worldwide focuses on providing basic education to those…",
+      "thumbUrl": "../../assets/image/charity/blog/thumb-2.png",
+      "btnText": "Learn More ",
+      "btnUrl": "#1"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "logo": "../../assets/image/charity/clients/1.png",
+      "name": "windows",
+      "link": "#1"
+    },
+    {
+      "id": 2,
+      "logo": "../../assets/image/charity/clients/2.png",
+      "name": "airbnb",
+      "link": "#2"
+    },
+    {
+      "id": 3,
+      "logo": "../../assets/image/charity/clients/3.png",
+      "name": "adidas",
+      "link": "#3"
+    },
+    {
+      "id": 4,
+      "logo": "../../assets/image/charity/clients/4.png",
+      "name": "ibm",
+      "link": "#4"
+    },
+    {
+      "id": 5,
+      "logo": "../../assets/image/charity/clients/5.png",
+      "name": "amazon",
+      "link": "#5"
+    },
+    {
+      "id": 6,
+      "logo": "../../assets/image/charity/clients/6.png",
+      "name": "google",
+      "link": "#6"
+    }
+  ],
+  "menuWidgets": [
+    {
+      "id": 1,
+      "title": "FUNDRAISE FOR",
+      "menu": [
+        {
+          "id": 1,
+          "text": "Medical",
+          "link": "#1"
+        },
+        {
+          "id": 2,
+          "text": "Emergency",
+          "link": "#1"
+        },
+        {
+          "id": 3,
+          "text": "Memorial",
+          "link": "#1"
+        },
+        {
+          "id": 4,
+          "text": "Education",
+          "link": "#1"
+        },
+        {
+          "id": 5,
+          "text": "Charity",
+          "link": "#1"
+        },
+        {
+          "id": 6,
+          "text": "Nonprofit organization",
+          "link": "#1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "LEARN MORE",
+      "menu": [
+        {
+          "id": 1,
+          "text": "How invisiblechildren works",
+          "link": "#1"
+        },
+        {
+          "id": 2,
+          "text": "Pricing and Fees",
+          "link": "#1"
+        },
+        {
+          "id": 3,
+          "text": "Common questions",
+          "link": "#1"
+        },
+        {
+          "id": 4,
+          "text": "Success stories",
+          "link": "#1"
+        },
+        {
+          "id": 5,
+          "text": "Supported countries",
+          "link": "#1"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "RESOURCES",
+      "menu": [
+        {
+          "id": 1,
+          "text": "Help center",
+          "link": "#1"
+        },
+        {
+          "id": 2,
+          "text": "Blog",
+          "link": "#1"
+        },
+        {
+          "id": 3,
+          "text": "GoFundMe Stories",
+          "link": "#1"
+        },
+        {
+          "id": 4,
+          "text": "Press center",
+          "link": "#1"
+        },
+        {
+          "id": 5,
+          "text": "Careers",
+          "link": "#1"
+        },
+        {
+          "id": 6,
+          "text": "About",
+          "link": "#1"
+        }
+      ]
+    }
+  ],
+  "copyright": [
+    {
+      "id": 1,
+      "text": "Privacy Policy",
+      "link": "1#"
+    },
+    {
+      "id": 2,
+      "text": "Terms and Conditions",
+      "link": "1#"
+    }
+  ]
+}
