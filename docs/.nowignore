@@ -1,9 +1,0 @@
-.next
-node_modules
-dist
-public
-.firebase
-.vscode
-.firebaserc
-firebase.json
-out

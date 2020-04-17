@@ -1,39 +1,7 @@
 {
-  "name": "micro-runner",
-  "version": "0.2.0",
-  "description": "micro-benchmark runner for benchmarking JavaScript code",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm publish"
-  },
-  "author": "Luca Mezzalira",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "cli",
-    "benchmark",
-    "micro",
-    "runner",
-    "micro-benchmark",
-    "microbenchmark",
-    "tool",
-    "nodejs"
-  ],
-  "bin": {
-    "micro-runner": "./bin/micro-runner.js"
-  },
-  "dependencies": {
-    "cli-table3": "^0.6.0",
-    "colors": "^1.4.0",
-    "json2xls": "^0.1.2",
-    "minimist": "^1.2.5",
-    "ora": "^4.0.3",
-    "performance-now": "^2.1.0"
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.20.2"
   }
 }

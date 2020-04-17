@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "micro-runner",
+    "docs"
+  ],
+  "version": "^3.20.2"
+}
