@@ -1,5 +1,6 @@
-const now = require('performance-now');
-const assert = require('assert').strict;
+// const assert = require('assert').strict;
+
+const metrics = require('../../micro-runner-metrics');
 
 let hashmap, total_elements;
 const TOTAL_KEYS = 100000;
@@ -7,20 +8,17 @@ const TOTAL_KEYS = 100000;
 module.exports = {
     run: function() {
         hashmap = new Map();
-        const initTime = now();
+        metrics.init("map time")
         for(let i = 0; i<TOTAL_KEYS; i++){
             hashmap.set(`key-${i}`, `value-${i}`);
         }
         total_elements = hashmap.size;
         // for(let i = 0; i<TOTAL_KEYS; i++){
-        //     assert.ok(hashmap.get(`key-${i}`));
-        // }
-        const endTime = now();
-        const total = endTime-initTime;
+            //     assert.ok(hashmap.get(`key-${i}`));
+            // }
 
-        return {
-            time: total,
-            output: total_elements
-        }
+        metrics.end("map time", total_elements);
+        
+        return metrics.results();
     }
 }

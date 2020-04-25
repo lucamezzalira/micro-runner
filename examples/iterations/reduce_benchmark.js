@@ -1,20 +1,16 @@
-const now = require('performance-now');
+const metrics = require('../../micro-runner-metrics');
 const sequenceOfNumbers = require('../../micro-runner/utils/data_generator').sequenceOfNumbers;
 
 const ARRAY_LEN = 1000000;
 let num = sequenceOfNumbers(ARRAY_LEN);
-let sum = 0;
 
 module.exports = {
     run: function(){
-        const initTime = now();
+        let sum = 0;
+        metrics.init("reduce");
         sum = num.reduce((acc, value) => acc + value);
-        const endTime = now();
-        const total = endTime-initTime;
+        metrics.end("reduce", sum);
 
-        return {
-            time: total,
-            output: sum
-        }
+        return metrics.results();
     }
 }

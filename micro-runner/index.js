@@ -8,6 +8,8 @@ const readdir = util.promisify(fs.readdir);
 const output = require('./cli/cli_output');
 const args = require('./cli/args');
 
+const BENCHMARK_LAUNCHER = path.resolve(__dirname + '/tests_runner.js');
+
 const files_list = async (url) => {
     let files;
 
@@ -44,7 +46,7 @@ const init = async () => {
 
     } 
 
-    const child = fork('./tests_runner.js', [JSON.stringify({tests: tests, iterations: iterations})])
+    const child = fork(BENCHMARK_LAUNCHER, [JSON.stringify({tests: tests, iterations: iterations})])
     child.on("exit", function(){
         spinner.succeed("benchmarks ready")
         output.render();
@@ -61,22 +63,21 @@ const init = async () => {
 }
 
 process.on("uncaughtException", (err) => {
-    console.error(colors.red("Something went wrong! Please try again :("));
     spinner.stop();
+    console.error(colors.red("\nSomething went wrong! Please try again :("));
     process.exit();
 });
 
 const spinner = ora({
-    text: "running benchmarks",
+    text: "running benchmarks ",
     color: "yellow"
 }).start();
-
 init();
 
+//TODO: replace child process with workers_thread
 //TODO: having multiple benchmark in the same file ?
 //TODO: process.exit after N seconds
 //TODO: REFACTOR: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
-//TODO: add --help

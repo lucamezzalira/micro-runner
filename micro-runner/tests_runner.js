@@ -1,10 +1,9 @@
 const minimist = require('minimist');
-// const { process } = require('child_process');
 
 let test_no = 0;
 let in_process = false;
 let benchmark;
-let iterations
+let iterations;
 
 const runBenchmark = (file, id) => {
     let benchmark_metrics = [];
@@ -14,8 +13,9 @@ const runBenchmark = (file, id) => {
     for(let i = 0; i < iterations; i++){
         benchmark_metrics.push(benchmark.run())
     }
+
     in_process = false;
-    
+
     return {
         id: id+1,
         benchmark: file.split("/").reverse()[0],
@@ -34,7 +34,7 @@ const start = (tests) => {
             test_no++;
         }
     }
- 
+
     process.send(metrics)  
 }
 
