@@ -1,30 +1,30 @@
-const now = require('performance-now');
+const now = require('performance-now')
 
-let metrics, init_metrics = {};
+class Metric{
+    constructor(){
+        this.metrics = {};
+        this.init_metrics = {}
+    }
 
-const results = () => {
-    return metrics;
-}
+    results(){
+        return this.metrics;
+    }
 
-const init = (flag) => {
-    init_metrics[flag] = now();
-}
+    init(flag){
+        this.init_metrics[flag] = now();
+    }
 
-const end = (flag, output) => {
-    metrics = {}
-    const initTime = init_metrics[flag];
-    if(initTime){
-        metrics[flag] = {
-            time: now()-initTime,
-            output: output
+    end(flag, output){
+        const initTime = this.init_metrics[flag];
+        if(initTime){
+            this.metrics[flag] = {
+                time: now()-initTime,
+                output: output
+            }
+        } else {
+            throw "no init time associated to this label. Create first a init point and then you can add an end point";
         }
-    } else {
-        throw "no init time associated to this label. Create first a init point and then you can add an end point";
     }
 }
 
-module.exports = {
-    results: results,
-    init: init,
-    end: end
-}
+module.exports = Metric;

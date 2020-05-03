@@ -74,6 +74,8 @@ const spinner = ora({
 }).start();
 init();
 
+//TODO: metrics should have a method run (?)
+//TODO: calculate test time in the 
 //TODO: replace child process with workers_thread
 //TODO: having multiple benchmark in the same file ?
 //TODO: process.exit after N seconds

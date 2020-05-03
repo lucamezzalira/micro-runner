@@ -1,6 +1,6 @@
 // const assert = require('assert').strict;
 
-const metrics = require('../../micro-runner-metrics');
+const Metrics = require('../../micro-runner-metrics');
 
 let hashmap, total_elements;
 const TOTAL_KEYS = 100000;
@@ -8,6 +8,8 @@ const TOTAL_KEYS = 100000;
 module.exports = {
     run: function() {
         hashmap = {};
+
+        let metrics = new Metrics();
 
         metrics.init("obj time")
         for(let i = 0; i<TOTAL_KEYS; i++){

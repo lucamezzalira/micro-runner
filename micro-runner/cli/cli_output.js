@@ -21,9 +21,9 @@ const analyze = (metrics, verbose) => {
         average = 0;
         total_tests_time = 0;
         metrics_length = metrics[i].data.length;
-        
+        console.log(metrics[i].data)
         for(let k = 0; k < metrics_length; k++){   
-            total_tests_time += Object.values(metrics[i].data[k])[0].time;
+            Object.values(metrics[i].data[k]).forEach(benchmark => total_tests_time += benchmark.time);
         }
      
         average = total_tests_time/metrics_length;
@@ -58,7 +58,7 @@ const analyze = (metrics, verbose) => {
         tmp_arr[winner].time = colors.green(tmp_arr[winner].time);
     }
 
-    tmp_arr.forEach((value) => resultTable.push(Object.values(value)))
+    tmp_arr.forEach(value => resultTable.push(Object.values(value)))
 }
 
 const render = () => {

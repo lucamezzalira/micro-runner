@@ -4,6 +4,7 @@
 3. create server on port 80 or another port but then I need to add the port to the URL
 4. provide a random subdomain (unique-names-generator)
 5. expose APIs
+6. don't calculate time in the server but gather only the init and end time 
 
 DOMAIN to USE
 micro-runner.rocks
