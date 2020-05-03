@@ -15,10 +15,13 @@ class Metric{
     }
 
     end(flag, output){
+        const endTime = now();
         const initTime = this.init_metrics[flag];
         if(initTime){
             this.metrics[flag] = {
-                time: now()-initTime,
+                init: initTime,
+                end: endTime,
+                time: endTime-initTime,
                 output: output
             }
         } else {

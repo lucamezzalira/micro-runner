@@ -74,10 +74,8 @@ const spinner = ora({
 }).start();
 init();
 
-//TODO: metrics should have a method run (?)
-//TODO: calculate test time in the 
+//TODO: should I use run() in benchmarks?
 //TODO: replace child process with workers_thread
-//TODO: having multiple benchmark in the same file ?
 //TODO: process.exit after N seconds
 //TODO: REFACTOR: move files list logic into args.js
 //TODO: review APIs for creating tests and publish to micro-runner
