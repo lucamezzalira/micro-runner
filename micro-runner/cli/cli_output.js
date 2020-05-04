@@ -21,7 +21,7 @@ const analyze = (metrics, verbose) => {
         average = 0;
         total_tests_time = 0;
         metrics_length = metrics[i].data.length;
-        console.log(metrics[i].data)
+        
         for(let k = 0; k < metrics_length; k++){   
             Object.values(metrics[i].data[k]).forEach(benchmark => total_tests_time += benchmark.time);
         }

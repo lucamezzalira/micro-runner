@@ -23,10 +23,19 @@ const verify_iterations = iterations => {
     return iterations;
 }
 
+const verify_module_type = module_type => {
+    if(!module_type)
+        return "cjs";
+    
+    return module_type;
+    
+}
+
 module.exports = {
     iterations: verify_iterations(params.i),
     folder: params.f,
     file: params._[0],
     verbose: params.verbose,
-    XLSoutput: params.x
+    XLSoutput: params.x,
+    module_type: verify_module_type(params.m)
 }

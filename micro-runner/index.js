@@ -22,7 +22,8 @@ const files_list = async (url) => {
     }
     
     files = files.filter(file => {
-        if(path.extname(file).toLowerCase() === '.js')
+        const ext = path.extname(file).toLowerCase()
+        if(ext === '.js' || ext === '.mjs' || ext === '.cjs')
             return file
     })
     
@@ -30,7 +31,8 @@ const files_list = async (url) => {
 }
 
 const init = async () => {
-    let iterations = args.iterations;
+    const iterations = args.iterations;
+    const module_type = args.module_type;
     let tests;
 
     if(args.folder){
@@ -43,10 +45,9 @@ const init = async () => {
             console.error(colors.red("the file doesn't exist, check the path and try again"));
             process.exit();
         }
-
     } 
 
-    const child = fork(BENCHMARK_LAUNCHER, [JSON.stringify({tests: tests, iterations: iterations})])
+    const child = fork(BENCHMARK_LAUNCHER, [JSON.stringify({tests: tests, iterations: iterations, module: module_type})])
     child.on("exit", function(){
         spinner.succeed("benchmarks ready")
         output.render();
@@ -74,10 +75,12 @@ const spinner = ora({
 }).start();
 init();
 
-//TODO: should I use run() in benchmarks?
-//TODO: replace child process with workers_thread
-//TODO: process.exit after N seconds
+//TODO: refactor tests runner
+//TODO: run es6 modules with older versions of node-> install nvm
+//TODO: introduce webpack and babel
+//TODO: async examples
+//TODO: see how the library would be imported in real examples
+//TODO: replace child process with workers_threads
 //TODO: REFACTOR: move files list logic into args.js
-//TODO: review APIs for creating tests and publish to micro-runner
 //TODO: web server for testing in different devices
 //TODO: adding scripts for releasing (branching, npm publish...)
