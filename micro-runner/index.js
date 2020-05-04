@@ -80,7 +80,7 @@ init();
 //TODO: introduce webpack and babel
 //TODO: async examples
 //TODO: see how the library would be imported in real examples
+//TODO: adding scripts for releasing (branching, npm publish...)
 //TODO: replace child process with workers_threads
 //TODO: REFACTOR: move files list logic into args.js
 //TODO: web server for testing in different devices
-//TODO: adding scripts for releasing (branching, npm publish...)

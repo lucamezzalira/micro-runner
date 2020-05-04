@@ -45,6 +45,11 @@ micro-runner -f ./benchmarks
 **-f** is used for specifying a folder with JavaScript files. Every single JavaScript file in that folder will run sequentially one after the other.
 
 ```
+micro-runner -f ./benchmarks -m mjs
+```
+**-m** command followed by `mjs` is used when the files to benchmark are _ES6 modules_. By default all the modules will be run as CommonJS modules, you can also explicitely add the argument `cjs` to `-m` parameter.     
+
+```
 micro-runner --verbose ./benchmark.js
 ```
 **-verbose** command shows every iteration time for each benchmark
@@ -64,12 +69,10 @@ micro-runner -v
 TBD
 
 ### Roadmap
-[] better erros management    
-[] create JavaScript library for gathering and reporting metrics to Micro-Runner   
+[x] create JavaScript library for gathering and reporting metrics to Micro-Runner   
+[] better errors management    
 [] add _interactive help_ in the CLI     
-
-### Future Ideas
-- gathering micro-benchmarks from other sources
+[] gathering micro benchmarks from existing applicaitons      
 
 ### Contacts
 For any additional info or ideas feel free to [reach me out](mailto:mezzalab@gmail.com)
