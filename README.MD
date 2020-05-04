@@ -37,7 +37,7 @@ micro-runner -i 10 ./mybenchmark.js
 **-i** corresponds to the number of iterations you wanna run per benchmark, it has to be an integer and can be a **number from 1 to 100**. When the parameter provided is larger than 100, the iterations per benchmark will be 100.   
 When this parameter is not specified the **default value is 10**.
 
-_If you have many tests and you set 500 iterations per benchmark be aware it could take a while._
+_If you have many tests and you set 100 iterations per benchmark be aware it could take a while._
 
 ```
 micro-runner -f ./benchmarks
