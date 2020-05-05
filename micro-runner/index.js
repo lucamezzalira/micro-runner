@@ -84,6 +84,7 @@ init();
 //TODO: update README with benchmark anatomy
 //=============== release micro-runner 0.3.1 ==================
 //TODO: async examples
+//TODO: BUG: when in the table I have same time only the first is winner
 //TODO: replace child process with workers_threads
 //TODO: REFACTOR: move files list logic into args.js
 //=============== release micro-runner 0.4.0 ==================

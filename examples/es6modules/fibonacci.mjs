@@ -9,12 +9,16 @@ class Fibonacci {
       }
 }
 
-export function run(){
-    const metrics = new Metrics();
-    const fb = new Fibonacci();
-    metrics.init("fibonacci")
-    fb.calculate(30)
-    metrics.end("fibonacci")
-
-    return metrics.results();
+class Test {
+    run(){
+        const metrics = new Metrics();
+        const fb = new Fibonacci();
+        metrics.init("fibonacci")
+        fb.calculate(30)
+        metrics.end("fibonacci")
+    
+        return metrics.results();
+    }
 }
+
+export default Test;

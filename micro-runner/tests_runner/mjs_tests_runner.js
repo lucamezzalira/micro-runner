@@ -1,3 +1,6 @@
+const Util = require('util');
+
+const regex = /default/
 let test_no = 0;
 let benchmark;
 let iterations;
@@ -7,7 +10,12 @@ async function runAsyncBenchmark(file, id){
     benchmark = await import(file);
 
     for(let i = 0; i < iterations; i++){
-        benchmark_metrics.push(benchmark.run())
+        if(!regex.test(Util.inspect(benchmark))){
+            benchmark_metrics.push(benchmark.run())
+        } else { 
+            let test = new benchmark.default();
+            benchmark_metrics.push(test.run())
+        }
     }
 
     return {
