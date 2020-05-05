@@ -2,6 +2,10 @@ const minimist = require('minimist');
 const colors = require('colors');
 const params = minimist(process.argv.slice(2));
 const version = require('../../package.json').version;
+const util = require('util');
+const fs = require('fs');
+const readdir = util.promisify(fs.readdir);
+const path = require('path');
 
 const DEFAULT_ITERATIONS = 10;
 const MAX_ITERATIONS = 100;
@@ -31,9 +35,30 @@ const verify_module_type = module_type => {
     
 }
 
+const files_list = async (url) => {
+    let files;
+
+    try{
+        files  = await readdir(path.resolve(url))
+    } catch(err){
+        spinner.stop();
+        console.error(colors.red("the directory doesn't exist, check the path again"));
+        process.exit();
+    }
+    
+    files = files.filter(file => {
+        const ext = path.extname(file).toLowerCase()
+        if(ext === '.js' || ext === '.mjs' || ext === '.cjs')
+            return file
+    })
+    
+    return files.map(file => path.resolve(url) + "/" + file);
+}
+
 module.exports = {
     iterations: verify_iterations(params.i),
     folder: params.f,
+    files: files_list(params.f),
     file: params._[0],
     verbose: params.verbose,
     XLSoutput: params.x,

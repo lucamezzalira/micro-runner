@@ -1,7 +1,6 @@
 import Metrics from '../../micro-runner-metrics/index.mjs';
 
 class Fibonacci {
-    
     calculate(num) {
         if (num <= 1) return 1;
       
