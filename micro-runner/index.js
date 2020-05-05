@@ -8,7 +8,7 @@ const readdir = util.promisify(fs.readdir);
 const output = require('./cli/cli_output');
 const args = require('./cli/args');
 
-const BENCHMARK_LAUNCHER = path.resolve(__dirname + '/tests_runner.js');
+const BENCHMARK_LAUNCHER = path.resolve(__dirname + '/tests_runner/tests_runner.js');
 
 const files_list = async (url) => {
     let files;
@@ -73,14 +73,18 @@ const spinner = ora({
     text: "running benchmarks ",
     color: "yellow"
 }).start();
+
 init();
 
-//TODO: refactor tests runner
+//=============== release micro-runner 0.3.0 ==================
 //TODO: run es6 modules with older versions of node-> install nvm
-//TODO: introduce webpack and babel
 //TODO: async examples
+//=============== release micro-runner-metrics 0.1.0 ==================
 //TODO: see how the library would be imported in real examples
 //TODO: adding scripts for releasing (branching, npm publish...)
+//TODO: update README with benchmark anatomy
+//=============== release micro-runner 0.3.1 ==================
 //TODO: replace child process with workers_threads
 //TODO: REFACTOR: move files list logic into args.js
+//=============== release micro-runner 0.4.0 ==================
 //TODO: web server for testing in different devices

@@ -36,8 +36,5 @@
     "minimist": "^1.2.5",
     "ora": "^4.0.3",
     "performance-now": "^2.1.0"
-  },
-  "devDependencies": {
-    "lerna": "^3.20.2"
   }
 }
