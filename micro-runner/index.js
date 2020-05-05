@@ -76,8 +76,6 @@ const spinner = ora({
 
 init();
 
-//=============== release micro-runner 0.3.0 ==================
-//TODO: run es6 modules with older versions of node-> install nvm
 //=============== release micro-runner-metrics 0.1.0 ==================
 //TODO: see how the library would be imported in real examples
 //TODO: adding scripts for releasing (branching, npm publish...)

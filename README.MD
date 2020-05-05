@@ -47,7 +47,8 @@ micro-runner -f ./benchmarks
 ```
 micro-runner -f ./benchmarks -m mjs
 ```
-**-m** command followed by `mjs` is used when the files to benchmark are _ES6 modules_. By default all the modules will be run as CommonJS modules, you can also explicitely add the argument `cjs` to `-m` parameter.     
+**-m** command followed by `mjs` is used when the files to benchmark are _ES6 modules_. By default all the modules will be run as CommonJS modules, you can also explicitely add the argument `cjs` to `-m` parameter.    
+**ES6 modules are supported only from Node 14 onwards, Node 12 and 13 with experimental-modules flag will not work**      
 
 ```
 micro-runner --verbose ./benchmark.js
