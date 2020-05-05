@@ -78,12 +78,12 @@ init();
 
 //=============== release micro-runner 0.3.0 ==================
 //TODO: run es6 modules with older versions of node-> install nvm
-//TODO: async examples
 //=============== release micro-runner-metrics 0.1.0 ==================
 //TODO: see how the library would be imported in real examples
 //TODO: adding scripts for releasing (branching, npm publish...)
 //TODO: update README with benchmark anatomy
 //=============== release micro-runner 0.3.1 ==================
+//TODO: async examples
 //TODO: replace child process with workers_threads
 //TODO: REFACTOR: move files list logic into args.js
 //=============== release micro-runner 0.4.0 ==================

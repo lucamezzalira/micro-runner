@@ -1,7 +1,7 @@
 {
   "name": "micro-runner-metrics",
   "version": "0.1.0",
-  "description": "",
+  "description": "This is the library used for gathering benchmark metrics for the micro-runner CLI",
   "type": "module",
   "main": "./index.cjs",
   "exports": {
@@ -9,8 +9,23 @@
     "require": "./index.cjs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Luca Mezzalira",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "benchmark",
+    "micro-runner",
+    "micro",
+    "runner",
+    "micro-benchmark",
+    "microbenchmark",
+    "tool",
+    "nodejs",
+    "playground"
+  ]
 }
