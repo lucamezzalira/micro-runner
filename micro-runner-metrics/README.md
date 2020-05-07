@@ -10,21 +10,28 @@ Micro-Runner CLI calls function called `run` with a return object containing the
 This library provide a tiny API for overcoming the burden of knowing the contract expected by the CLI for visualizing the results.
 
 ## APIs
+The APIs are pretty simple, after istantiating a `new Metric` object, we need to wrap the code  to test with the init and end methods.
+A key requirement is exposing a run method that returns `metrics.result()` for the Micro-Runner CLI to collect the metrics tracked in the benchmark.
 
 ### init(flag)
-```metrics.init("my flag");```
+```metrics.init("my flag");```     
 
-bla bla
+This method is used for initialize the metrics collection. It requires to set a flag as string that has to be same when we call the `end` method.
 
 ### end(flag, data)
-```metrics.end("my flag", result);```
+```metrics.end("my flag", result);```     
 
-bla bla
+This method is used for stopping the time, calculate the execution time and optionally pass some data related computed by the algorithm(`data`). It requires to set a flag as string that has to be same when of the `init` method.
 
 ### results()
 ```metrics.results();```
 
-bla bla
+Results method contains the metrics gathered during the benchmark test.
+You can track multiple benchmarks in the same `run` function, all the data gathered will be passed to the micro-runner CLI for displaying the results.
+
+
+# Examples
+Following some code examples on how to implement a micro-runner-metrics library to be used by micro-runner CLI
 
 ## CommonJS example
 
