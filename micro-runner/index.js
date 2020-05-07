@@ -56,7 +56,6 @@ init();
 
 //=============== release micro-runner 0.3.1 ==================
 //TODO: async examples
-//TODO: update README with benchmark anatomy
 //TODO: BUG: when in the table I have same time only the first is winner
 //TODO: replace child process with workers_threads
 //TODO: review benchmark.js way to compare tests(https://github.com/mathiasbynens/Benchmark.js/blob/d4e874f2c0956d11bd1187870c2655eb3a3ab692/benchmark.js#L1175-1194)

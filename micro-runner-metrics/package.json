@@ -1,6 +1,6 @@
 {
   "name": "micro-runner-metrics",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This is the library used for gathering benchmark metrics for the micro-runner CLI",
   "type": "module",
   "main": "./index.cjs",
@@ -16,6 +16,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "homepage": "https://github.com/lucamezzalira/micro-runner/blob/master/micro-runner-metrics/README.md",
   "keywords": [
     "benchmark",
     "micro-runner",
