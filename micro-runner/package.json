@@ -1,6 +1,6 @@
 {
   "name": "micro-runner",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "micro benchmarking for JavaScript code",
   "main": "index.js",
   "directories": {
