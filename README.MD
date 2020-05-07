@@ -65,15 +65,16 @@ micro-runner -v
 ```
 **-v** command shows the Micro-Runner version installed
 
-## Benchmark anatomy
+## Micro-Runner-Metrics
+Micro-Runner-Metrics is the library used by Micro-Runner CLI for gathering and parsing metrics.    
 
-TBD
+For more information on how to setup a micro-benchmark for micro-runner, please install micro-runner-metrics library and follow [the guidelines](https://github.com/lucamezzalira/micro-runner/blob/master/micro-runner-metrics/README.md).
 
 ### Roadmap
 [x] create JavaScript library for gathering and reporting metrics to Micro-Runner   
 [] better errors management    
 [] add _interactive help_ in the CLI     
-[] gathering micro benchmarks from existing applicaitons      
+[] gathering micro benchmarks from existing applications      
 
 ### Contacts
 For any additional info or ideas feel free to [reach me out](mailto:mezzalab@gmail.com)
