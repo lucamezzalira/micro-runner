@@ -1,4 +1,3 @@
-const colors = require('colors');
 const Table = require('cli-table3');
 const json2xls = require('json2xls');
 const fs = require('fs');
@@ -13,8 +12,6 @@ const tmp_arr = [];
 const analyze = (metrics, verbose) => {
     let total_tests_time,
         average,
-        winner,
-        tmp_average,
         metrics_length;
     
     for(let i = 0; i < metrics.length; i++){
@@ -26,12 +23,7 @@ const analyze = (metrics, verbose) => {
             Object.values(metrics[i].data[k]).forEach(benchmark => total_tests_time += benchmark.time);
         }
      
-        average = total_tests_time/metrics_length;
-        
-        if(!tmp_average || average < tmp_average){
-            tmp_average = average;
-            winner = (!verbose) ? i : i * (metrics_length+1);
-        } 
+        average = total_tests_time/metrics_length; 
 
         tmp_arr.push({
             id:metrics[i].id.toString(),
@@ -50,12 +42,6 @@ const analyze = (metrics, verbose) => {
                 })
             })
         }
-    }
-
-    if(winner >= 0){
-        tmp_arr[winner].id = colors.green(tmp_arr[winner].id);
-        tmp_arr[winner].benchmark = colors.green(tmp_arr[winner].benchmark);
-        tmp_arr[winner].time = colors.green(tmp_arr[winner].time);
     }
 
     tmp_arr.forEach(value => resultTable.push(Object.values(value)))

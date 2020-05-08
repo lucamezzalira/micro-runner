@@ -59,9 +59,7 @@ const spinner = ora({
 init();
 
 //=============== release micro-runner 0.3.3 ==================
-//TODO: async examples
 //TODO: in verbose mode add all the tests in a run function (basics/assignment.js)
-//TODO: BUG: when in the table I have same time only the first is winner
 //=============== release micro-runner 0.4.0 ==================
 //TODO: replace child process with workers_threads
 //TODO: review benchmark.js way to compare tests(https://github.com/mathiasbynens/Benchmark.js/blob/d4e874f2c0956d11bd1187870c2655eb3a3ab692/benchmark.js#L1175-1194)
