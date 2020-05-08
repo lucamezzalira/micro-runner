@@ -10,11 +10,22 @@ async function runAsyncBenchmark(file, id){
     benchmark = await import(file);
 
     for(let i = 0; i < iterations; i++){
+        
         if(!regex.test(Util.inspect(benchmark))){
-            benchmark_metrics.push(benchmark.run())
+            if(benchmark.run.constructor.name === "AsyncFunction"){
+                const benchmark_results = await benchmark.run()
+                benchmark_metrics.push(benchmark_results)
+            } else {
+                benchmark_metrics.push(benchmark.run())
+            }
         } else { 
             let test = new benchmark.default();
-            benchmark_metrics.push(test.run())
+            if(test.constructor.name === "AsyncFunction"){
+                const benchmark_results = await test.run()
+                benchmark_metrics.push(benchmark_results)
+            } else {
+                benchmark_metrics.push(test.run())
+            }
         }
     }
 
