@@ -36,15 +36,10 @@ const verify_module_type = module_type => {
 }
 
 const files_list = async (url) => {
-    let files;
+    const isDirectory = fs.statSync(url).isDirectory();
+    if(!isDirectory) return;
 
-    try{
-        files  = await readdir(path.resolve(url))
-    } catch(err){
-        spinner.stop();
-        console.error(colors.red("the directory doesn't exist, check the path again"));
-        process.exit();
-    }
+    let files = await readdir(path.resolve(url))
     
     files = files.filter(file => {
         const ext = path.extname(file).toLowerCase()
@@ -58,7 +53,7 @@ const files_list = async (url) => {
 module.exports = {
     iterations: verify_iterations(params.i),
     folder: params.f,
-    files: files_list(params.f),
+    files: params.f ? files_list(params.f) : [],
     file: params._[0],
     verbose: params.verbose,
     XLSoutput: params.x,

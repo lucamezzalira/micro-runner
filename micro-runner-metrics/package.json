@@ -16,7 +16,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/lucamezzalira/micro-runner/blob/master/micro-runner-metrics/README.md",
+  "homepage": "https://github.com/lucamezzalira/micro-runner",
   "keywords": [
     "benchmark",
     "micro-runner",

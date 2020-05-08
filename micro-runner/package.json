@@ -14,7 +14,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/lucamezzalira/micro-runner/blob/master/micro-runner/README.md",
+  "homepage": "https://github.com/lucamezzalira/micro-runner",
   "keywords": [
     "cli",
     "benchmark",
