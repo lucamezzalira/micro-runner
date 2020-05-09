@@ -65,4 +65,5 @@ init();
 //TODO: review benchmark.js way to compare tests(https://github.com/mathiasbynens/Benchmark.js/blob/d4e874f2c0956d11bd1187870c2655eb3a3ab692/benchmark.js#L1175-1194)
 //TODO: introduce ops/sec as additional metric (https://www.npmjs.com/package/ops-per-sec)
 //=============== release micro-runner 0.5.0 ==================
+//TODO: highlight fasster benchmarks
 //TODO: web server for testing in different devices

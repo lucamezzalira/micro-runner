@@ -1,6 +1,7 @@
 const Table = require('cli-table3');
 const json2xls = require('json2xls');
 const fs = require('fs');
+const colors = require('colors');
 
 const resultTable = new Table({
     head: ["ID", "Test", "Time", "Iterations"],
@@ -29,6 +30,7 @@ const analyze = (metrics, verbose) => {
             id:metrics[i].id.toString(),
             benchmark: metrics[i].benchmark,
             time: `${average.toFixed(3)} ms`,
+            raw_time: average.toFixed(3),
             iterations: metrics[i].iterations
         })  
 
@@ -38,13 +40,41 @@ const analyze = (metrics, verbose) => {
                     id: `${metrics[i].id}.${index+1}`,
                     benchmark: "",
                     time: `${Object.values(iteration)[0].time.toFixed(3)} ms`,
+                    raw_time: Object.values(iteration)[0].time.toFixed(3),
                     iterations: 1
                 })
             })
         }
     }
 
-    tmp_arr.forEach(value => resultTable.push(Object.values(value)))
+    select_winners(tmp_arr, verbose);
+
+    tmp_arr.forEach(value => {
+        resultTable.push([value.id, value.benchmark, value.time, value.iterations])
+    })
+}
+
+const select_winners = (metrics_arr, isVerbose) => {
+    let winner, id;
+    const winners_arr = metrics_arr.slice();
+    winners_arr.sort((a,b) => a.raw_time - b.raw_time)
+    for(let i = 0; i < winners_arr.length; i++){
+        if(!Number.isInteger(Number(winners_arr[i].id))) continue; // check the id is integer otherwise is not an average
+        if(!winner) winner = winners_arr[i]; //assing the winner if is underfined
+        if(winner.raw_time === winners_arr[i].raw_time){
+            if(isVerbose){
+                id = (Number(winners_arr[i].id)-1) * (Number(winners_arr[i].iterations)+1)
+            } else {
+                id = Number(winners_arr[i].id)-1 
+            }
+
+            metrics_arr[id].id = colors.green(metrics_arr[id].id);
+            metrics_arr[id].benchmark = colors.green(metrics_arr[id].benchmark);
+            metrics_arr[id].time = colors.green(metrics_arr[id].time);
+        } else {
+            break
+        }
+    }
 }
 
 const render = () => {
