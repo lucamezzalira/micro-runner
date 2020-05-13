@@ -19,6 +19,7 @@ class Metric{
         const initTime = this.init_metrics[flag];
         if(initTime){
             this.metrics[flag] = {
+                flag: flag,
                 init: initTime,
                 end: endTime,
                 time: endTime-initTime,

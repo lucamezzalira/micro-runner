@@ -4,53 +4,69 @@ const fs = require('fs');
 const colors = require('colors');
 
 const resultTable = new Table({
-    head: ["ID", "Test", "Time", "Iterations"],
-    colWidths:[8, 30, 15, 12]
+    head: ["ID", "Benchmarks", "Flags", "Time", "Iterations"],
+    colWidths:[8, 30, 25, 15, 12]
 });
 
 const tmp_arr = [];
 
 const analyze = (metrics, verbose) => {
     let total_tests_time,
+        metrics_length,
         average,
-        metrics_length;
+        benchmarks_length;
     
     for(let i = 0; i < metrics.length; i++){
-        average = 0;
-        total_tests_time = 0;
+        total_tests_time = {};
         metrics_length = metrics[i].data.length;
-        
+    
         for(let k = 0; k < metrics_length; k++){   
-            Object.values(metrics[i].data[k]).forEach(benchmark => total_tests_time += benchmark.time);
+            Object.values(metrics[i].data[k]).forEach(benchmark => {
+                if(!total_tests_time[benchmark.flag])
+                    total_tests_time[benchmark.flag] = 0;
+
+                total_tests_time[benchmark.flag] += benchmark.time;
+            });
         }
-     
-        average = total_tests_time/metrics_length; 
+
+        benchmarks_length = Object.values(total_tests_time).length;
 
         tmp_arr.push({
             id:metrics[i].id.toString(),
             benchmark: metrics[i].benchmark,
-            time: `${average.toFixed(3)} ms`,
-            raw_time: average.toFixed(3),
-            iterations: metrics[i].iterations
+            raw_time: 0
         })  
+
+        for(let prop in total_tests_time){
+            average = total_tests_time[prop]/metrics[i].iterations
+            tmp_arr.push({
+                flag: prop,
+                time: `${average.toFixed(3)} ms`,
+                raw_time: average.toFixed(3),
+                iterations: metrics[i].iterations
+            })
+        }
 
         if(verbose){
             metrics[i].data.forEach((iteration, index) => {
-                tmp_arr.push({
-                    id: `${metrics[i].id}.${index+1}`,
-                    benchmark: "",
-                    time: `${Object.values(iteration)[0].time.toFixed(3)} ms`,
-                    raw_time: Object.values(iteration)[0].time.toFixed(3),
-                    iterations: 1
+                Object.values(iteration).forEach(benchmark => {
+                    tmp_arr.push({
+                        id: `${metrics[i].id}.${index+1}`,
+                        flag: benchmark.flag,
+                        time: `${benchmark.time.toFixed(3)} ms`,
+                        raw_time: benchmark.time.toFixed(3),
+                        iterations: 1
+                    })
                 })
             })
         }
     }
 
-    select_winners(tmp_arr, verbose);
+    //TO FIX
+    //select_winners(tmp_arr, verbose);
 
     tmp_arr.forEach(value => {
-        resultTable.push([value.id, value.benchmark, value.time, value.iterations])
+        resultTable.push([value.id, value.benchmark, value.flag, value.time, value.iterations])
     })
 }
 
