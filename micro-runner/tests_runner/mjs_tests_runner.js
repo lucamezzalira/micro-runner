@@ -5,24 +5,35 @@ let test_no = 0;
 let benchmark;
 let iterations;
 
+process.on('unhandledRejection', error => {
+    process.exit(1)
+})
+
 async function runAsyncBenchmark(file, id){
     let benchmark_metrics = [];
     benchmark = await import(file);
-
+    
     for(let i = 0; i < iterations; i++){
-        
         if(!regex.test(Util.inspect(benchmark))){
             if(benchmark.run.constructor.name === "AsyncFunction"){
-                const benchmark_results = await benchmark.run()
-                benchmark_metrics.push(benchmark_results)
+                try{
+                    const benchmark_results = await benchmark.run()
+                    benchmark_metrics.push(benchmark_results)
+                } catch(err){
+                    console.error(err);
+                }
             } else {
                 benchmark_metrics.push(benchmark.run())
             }
         } else { 
             let test = new benchmark.default();
             if(test.constructor.name === "AsyncFunction"){
-                const benchmark_results = await test.run()
-                benchmark_metrics.push(benchmark_results)
+                try{
+                    const benchmark_results = await test.run()
+                    benchmark_metrics.push(benchmark_results)
+                } catch(err){
+                    console.error(err);
+                }
             } else {
                 benchmark_metrics.push(test.run())
             }

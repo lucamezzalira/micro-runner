@@ -34,12 +34,17 @@ const analyze = (metrics, verbose) => {
         tmp_arr.push({
             id:metrics[i].id.toString(),
             benchmark: metrics[i].benchmark,
-            raw_time: 0
+            flag:"",
+            raw_time: "",
+            time: "",
+            iterations: ""
         })  
 
         for(let prop in total_tests_time){
             average = total_tests_time[prop]/metrics[i].iterations
             tmp_arr.push({
+                id:"",
+                benchmark: "",
                 flag: prop,
                 time: `${average.toFixed(3)} ms`,
                 raw_time: average.toFixed(3),
@@ -52,6 +57,7 @@ const analyze = (metrics, verbose) => {
                 Object.values(iteration).forEach(benchmark => {
                     tmp_arr.push({
                         id: `${metrics[i].id}.${index+1}`,
+                        benchmark: "",
                         flag: benchmark.flag,
                         time: `${benchmark.time.toFixed(3)} ms`,
                         raw_time: benchmark.time.toFixed(3),
@@ -62,35 +68,9 @@ const analyze = (metrics, verbose) => {
         }
     }
 
-    //TO FIX
-    //select_winners(tmp_arr, verbose);
-
     tmp_arr.forEach(value => {
         resultTable.push([value.id, value.benchmark, value.flag, value.time, value.iterations])
     })
-}
-
-const select_winners = (metrics_arr, isVerbose) => {
-    let winner, id;
-    const winners_arr = metrics_arr.slice();
-    winners_arr.sort((a,b) => a.raw_time - b.raw_time)
-    for(let i = 0; i < winners_arr.length; i++){
-        if(!Number.isInteger(Number(winners_arr[i].id))) continue; // check the id is integer otherwise is not an average
-        if(!winner) winner = winners_arr[i]; //assing the winner if is underfined
-        if(winner.raw_time === winners_arr[i].raw_time){
-            if(isVerbose){
-                id = (Number(winners_arr[i].id)-1) * (Number(winners_arr[i].iterations)+1)
-            } else {
-                id = Number(winners_arr[i].id)-1 
-            }
-
-            metrics_arr[id].id = colors.green(metrics_arr[id].id);
-            metrics_arr[id].benchmark = colors.green(metrics_arr[id].benchmark);
-            metrics_arr[id].time = colors.green(metrics_arr[id].time);
-        } else {
-            break
-        }
-    }
 }
 
 const render = () => {

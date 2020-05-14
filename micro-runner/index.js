@@ -32,7 +32,10 @@ const init = async () => {
     } 
 
     const child = fork(BENCHMARK_LAUNCHER, [JSON.stringify({tests: tests, iterations: iterations, module: module_type})])
-    child.on("exit", function(){
+    child.on("exit", function(code){
+        if(code !== 0)
+            exit_error("Something went wrong! Please try again :(")
+        
         spinner.succeed("benchmarks ready")
         output.render();
         if(args.XLSoutput)
@@ -58,12 +61,10 @@ const spinner = ora({
 
 init();
 
-//=============== release micro-runner 0.3.3 ==================
-//TODO: fix winner alghoritm
-//=============== release micro-runner 0.4.0 ==================
+//=============== release micro-runner 0.3.4 ==================
 //TODO: replace child process with workers_threads
-//TODO: review benchmark.js way to compare tests (https://github.com/mathiasbynens/Benchmark.js/blob/d4e874f2c0956d11bd1187870c2655eb3a3ab692/benchmark.js#L1175-1194)
-//TODO: introduce ops/sec as additional metric (https://www.npmjs.com/package/ops-per-sec)
-//=============== release micro-runner 0.5.0 ==================
-//TODO: web server for testing in different devices
 //TODO: refactor analyze function in cli_output
+//TODO: review benchmark.js way to compare tests (https://github.com/mathiasbynens/Benchmark.js/blob/d4e874f2c0956d11bd1187870c2655eb3a3ab692/benchmark.js#L1175-1194)
+//=============== release micro-runner 0.4.0 ==================
+//TODO: introduce ops/sec as additional metric (https://www.npmjs.com/package/ops-per-sec)
+//TODO: web server for testing in different devices
