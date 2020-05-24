@@ -62,6 +62,8 @@ const spinner = ora({
 init();
 
 //=============== release micro-runner 0.3.4 ==================
+//TODO: fix error when run as global cli
+//=============== release micro-runner 0.3.5 ==================
 //TODO: replace child process with workers_threads
 //TODO: refactor analyze function in cli_output
 //TODO: review benchmark.js way to compare tests (https://github.com/mathiasbynens/Benchmark.js/blob/d4e874f2c0956d11bd1187870c2655eb3a3ab692/benchmark.js#L1175-1194)

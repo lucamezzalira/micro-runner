@@ -1,6 +1,6 @@
 {
   "name": "micro-runner-metrics",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "This is the library used for gathering benchmark metrics for the micro-runner CLI",
   "type": "module",
   "main": "./index.cjs",

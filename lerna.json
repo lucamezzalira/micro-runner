@@ -1,8 +1,7 @@
 {
   "packages": [
     "micro-runner",
-    "micro-runner-metrics",
-    "docs"
+    "micro-runner-metrics"
   ],
   "version": "^3.20.2"
 }
