@@ -1,7 +1,7 @@
 const minimist = require('minimist');
 const colors = require('colors');
 const params = minimist(process.argv.slice(2));
-const version = require('../../package.json').version;
+const version = require('../package.json').version;
 const util = require('util');
 const fs = require('fs');
 const readdir = util.promisify(fs.readdir);
@@ -56,6 +56,7 @@ module.exports = {
     files: params.f ? files_list(params.f) : [],
     file: params._[0],
     verbose: params.verbose,
+    version: params.v,
     XLSoutput: params.x,
     module_type: verify_module_type(params.m)
 }
