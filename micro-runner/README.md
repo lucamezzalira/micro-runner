@@ -7,8 +7,7 @@ The main aim behind Micro-Runner is making micro benchmarking accessible and use
 Often, web, mobile or desktop applications are suffering from poor performances and developers are struggling to analyze the performance of their applications and improve them.      
 Micro-Runner aims to run some code in isolation like you would do in a playground providing immediate feedback in your CLI when you want to compare the most performant implementation across multiple of them.
 
-Here you can see micro-runner in action:     
-[![Micro-Runner demo video](https://img.youtube.com/vi/wTbvcjhdG7Q/0.jpg)](https://youtu.be/wTbvcjhdG7Q)
+In [this YouTube video](https://youtu.be/wTbvcjhdG7Q), you can see micro-runner in action    
 
 ## Installation
 ```
