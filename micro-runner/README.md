@@ -3,9 +3,12 @@
 
 ![Micro-Runner terminal example](https://github.com/lucamezzalira/micro-runner/raw/master/micro-runner.png "Micro-Runner terminal example")
 
-The main aim behind Micro-Runner is making microbenchmarking accessible and useful.    
-Often, web, mobile or desktop applications are suffering of poor performances and developers are struggling to analyze their applications performance and improve them.
-Micro-Runner aims to run some code in isolation like you would do in a  playground, directly from your CLI, providing an immediate feedback when you want to compare the most performant implementation across multiple of them.
+The main aim behind Micro-Runner is making micro benchmarking accessible and useful.    
+Often, web, mobile or desktop applications are suffering from poor performances and developers are struggling to analyze the performance of their applications and improve them.      
+Micro-Runner aims to run some code in isolation like you would do in a playground providing immediate feedback in your CLI when you want to compare the most performant implementation across multiple of them.
+
+Here you can see micro-runner in action:     
+[![Micro-Runner demo video](https://img.youtube.com/vi/wTbvcjhdG7Q/0.jpg)](https://youtu.be/wTbvcjhdG7Q)
 
 ## Installation
 ```
