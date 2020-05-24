@@ -20,7 +20,7 @@ In [this YouTube video](https://youtu.be/wTbvcjhdG7Q), you can see micro-runner 
 
 ### Roadmap
 [x] create JavaScript library for gathering and reporting metrics to Micro-Runner   
-[] implement local server
+[] implement local server        
 [] implement cloud server            
 [] add _interactive help_ in the CLI       
 [] better errors management    
