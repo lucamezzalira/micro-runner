@@ -1,3 +1,4 @@
 cd $1
 npm version $2
-lerna publish
+cd ..
+lerna publish from-package
