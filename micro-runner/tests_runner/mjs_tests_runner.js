@@ -1,4 +1,5 @@
 const Util = require('util');
+const { parentPort } = require('worker_threads');
 
 const regex = /default/
 let test_no = 0;
@@ -59,7 +60,8 @@ async function start(tests, iterations_no){
         test_no++;
     }
 
-    process.send(metrics);
+    parentPort.postMessage(metrics);
+    process.exit();
 }
 
 module.exports = start;
