@@ -1,3 +1,5 @@
+const { parentPort } = require('worker_threads');
+
 let test_no = 0;
 let in_process = false;
 let benchmark;
@@ -39,7 +41,8 @@ const start = async (tests, iterations_no) => {
         }
     }
 
-    process.send(metrics)  
+    parentPort.postMessage(metrics);
+    process.exit();
 }
 
 module.exports = start;
